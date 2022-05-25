@@ -1,6 +1,7 @@
 
 import { Outlet } from 'react-router-dom';
 import './App.css';
+import SectionTitle from './components/SectionTitle';
 import Navbar from './layouts/nav/Navbar';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className='wrapper'>
       <Navbar />
-      <h1>Wybierz</h1>
+      <SectionTitle title="Wybierz z menu co chciałbyś zrobić"/>
       <Outlet />
     </div>
   );
