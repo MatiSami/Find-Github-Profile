@@ -11,3 +11,24 @@ export const addReposList = ( data ) => {
         payload: data
     }
 };
+
+export const isLoading = ( loading ) => {
+    return {
+        type: 'IS_LOADING',
+        payload: loading
+    }
+};
+
+export const addCommits = ( commits ) => {
+    return {
+        type: 'ADD_COMMITS',
+        payload: commits
+    }
+};
+
+export const showError = ( error ) => {
+    return {
+        type: 'SHOW_ERROR',
+        payload: error
+    }
+};
