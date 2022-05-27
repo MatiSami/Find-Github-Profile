@@ -1,27 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
-import { addReposList as AddRepoListAction} from '../actions';
-const { Octokit } = require("@octokit/core");
+import { addReposList as AddRepoListAction } from '../actions';
+import { isLoading as isLoadingAction} from './../actions';
+// const { Octokit } = require("@octokit/core");
 
 
-function GithubSearchForm({ addReposList }) {
+function GithubSearchForm({ addReposList, isLoading }) {
     const [userName, setName] = useState("");
     const [reposList, setReposList] = useState([])
-    const octokit = new Octokit({ auth: `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` });
+    const [loadingStatus, setloadingStatus] = useState(false)
+    // const octokit = new Octokit({ auth: `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` });
 
     useEffect(() => {
-        addReposList(reposList)
-    }, [reposList]);
+        addReposList(reposList);
+        isLoading(loadingStatus)
+    }, [reposList, loadingStatus]);
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const response = await octokit.request(`GET /users/${userName}/repos`, {
-            sort: "updated"
-        });
-        
-        console.log(response.data)
-        setReposList(response.data)
+        setloadingStatus(true)
+
+        fetch(`https://api.github.com/users/${userName}/repos`, {
+            sort: 'updated',
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+            }
+        })
+            .then(response => response.json()) //Converting the response to a JSON object
+            .then(data => {
+                // console.log(data)
+                setReposList(data)
+                setloadingStatus(false)
+            })
+            .catch(error => {
+                console.error(error)
+                setReposList([]);
+                setloadingStatus(false)
+            });
+
     }
+
+
     return (
         <form onSubmit={handleSubmit}>
             <label>
@@ -34,12 +53,10 @@ function GithubSearchForm({ addReposList }) {
     );
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addReposList: (data) => {
-            dispatch(AddRepoListAction(data))
-        }
-    }
-}
+const mapDispatchToProps = (dispatch) => ({
+        addReposList: (data) => dispatch(AddRepoListAction(data)),
+        isLoading: (loading) => dispatch(isLoadingAction(loading))
+        })
+
 
 export default connect(null, mapDispatchToProps)(GithubSearchForm);
