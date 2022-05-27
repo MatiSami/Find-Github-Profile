@@ -5,6 +5,8 @@ import Navbar from '../layouts/nav/Navbar';
 import GithubSearchForm from './../components/GithubSearchForm';
 import { connect } from 'react-redux';
 import GithubDataContainer from '../components/GithubDataContainer';
+import ErrorMessage from '../components/ErrorMessage';
+import LoadingSpiner from '../components/LoadingSpiner';
 
 function Repos(props) {
     return (
@@ -14,10 +16,13 @@ function Repos(props) {
             <SectionDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dolor sem, fringilla vitae suscipit vitae, finibus vitae libero. Fusce ut ipsum vel lacus finibus tristique. Nam non leo consectetur, hendrerit magna in, luctus ante. Nullam sagittis porttitor vulputate. Nullam consectetur risus sem, ac placerat metus commodo eget. Morbi in purus. " />
             <GithubSearchForm />
             {
-                props.isLoading && <h1>Ładowanie wyników</h1>
+                props.isLoading && <LoadingSpiner/>
             }
             {
                 props.repos.length > 0 && !props.isLoading && <GithubDataContainer/>
+            }
+            {
+                props.error === true && !props.isLoading && <ErrorMessage/>
             }
 
         </div>
@@ -25,8 +30,8 @@ function Repos(props) {
 }
 
 const mapStateToProps =  state  => {
-    const { repos, isLoading } = state
-    return { repos, isLoading }
+    const { repos, isLoading, error } = state
+    return { repos, isLoading, error }
 }
 
 export default connect(mapStateToProps)(Repos);

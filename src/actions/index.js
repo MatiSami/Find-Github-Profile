@@ -25,3 +25,10 @@ export const addCommits = ( commits ) => {
         payload: commits
     }
 };
+
+export const showError = ( error ) => {
+    return {
+        type: 'SHOW_ERROR',
+        payload: error
+    }
+};

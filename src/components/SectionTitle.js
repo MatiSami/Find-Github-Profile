@@ -3,16 +3,16 @@ import styled from 'styled-components';
 
 function SectionTitle(props) {
 
-    const Title = styled.h1`
-        text-align: center;
-        margin: 3rem 0;
-    `
-
     return (
         <Title>
            {props.title} 
         </Title>
     );
 }
+
+    const Title = styled.h1`
+        text-align: center;
+        margin: 3rem 0;
+    `
 
 export default SectionTitle;

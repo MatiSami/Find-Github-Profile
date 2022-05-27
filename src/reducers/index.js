@@ -3,7 +3,8 @@ const initialvalue = {
     },
     isLoading: false,
     commits: {
-    }
+    },
+    error: false,
 }
 
 const rootReducer = (state = initialvalue, action) => {
@@ -24,6 +25,12 @@ const rootReducer = (state = initialvalue, action) => {
             return {
                 ...state,
                 commits: action.payload,
+
+            };
+        case ('SHOW_ERROR'):
+            return {
+                ...state,
+                error: action.payload,
 
             };
         default:

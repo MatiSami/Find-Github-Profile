@@ -2,24 +2,34 @@ import React from 'react';
 import { connect } from 'react-redux'
 import CommitsList from './CommitsList';
 import ReposList from './ReposList';
+import styled from 'styled-components';
+import GithubUserDetails from './GithubUserDetails';
 
-function GithubDataContainer(props) {
+function GithubDataContainer({ repos, commits }) {
 
     return (
-        <>
-            <ReposList/>
-            {
-                props.commits.length > 0 &&  <CommitsList/>   
-            }
-                
+        <>  
+            <GithubUserDetails/>
+            <GithubDataRenderBox>
+                <ReposList />
+                {
+                    commits.length > 0 && <CommitsList />
+                }
+            </GithubDataRenderBox>
         </>
+
 
     );
 }
 
-const mapStateToProps =  state  => {
-    const { commits } = state
-    return { commits }
+const GithubDataRenderBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+const mapStateToProps = state => {
+    const { repos, commits } = state
+    return { repos, commits }
 }
 
 
