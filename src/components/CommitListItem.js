@@ -15,13 +15,10 @@ function CommitItemList({ message, author, date }) {
 }
 
 const CommitsListElement = styled.div`
-    /* list-style: none; */
     font-size: 18px;
     padding: 5px 40px;
     margin-bottom: 10px;
     display: flex;
-    /* align-items: center;
-    justify-content: space-between; */
     flex-direction: column;
 
     p:first-of-type {

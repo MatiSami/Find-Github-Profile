@@ -20,7 +20,6 @@ function ReposItemList({addCommits, name, user}) {
         })
             .then(response => response.json()) 
             .then(data => {
-                // console.log(data)
                 addCommits(data)
             })
             .catch(error => {
