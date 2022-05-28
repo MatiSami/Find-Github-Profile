@@ -5,6 +5,7 @@ const initialvalue = {
     commits: {
     },
     error: false,
+    factorialResults: [],
 }
 
 const rootReducer = (state = initialvalue, action) => {
@@ -32,6 +33,11 @@ const rootReducer = (state = initialvalue, action) => {
                 ...state,
                 error: action.payload,
 
+            };
+        case ('ADD_FACTORIAL_RESULT'):
+            return {
+                ...state,
+               factorialResults: [...state.factorialResults, action.payload],
             };
         default:
             return state

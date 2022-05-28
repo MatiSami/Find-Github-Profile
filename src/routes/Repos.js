@@ -8,7 +8,7 @@ import GithubDataContainer from '../components/GithubDataContainer';
 import ErrorMessage from '../components/ErrorMessage';
 import LoadingSpiner from '../components/LoadingSpiner';
 
-function Repos(props) {
+function Repos( { repos, isLoading, error }) {
     return (
         <div className='wrapper'>
             <Navbar />
@@ -16,13 +16,13 @@ function Repos(props) {
             <SectionDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dolor sem, fringilla vitae suscipit vitae, finibus vitae libero. Fusce ut ipsum vel lacus finibus tristique. Nam non leo consectetur, hendrerit magna in, luctus ante. Nullam sagittis porttitor vulputate. Nullam consectetur risus sem, ac placerat metus commodo eget. Morbi in purus. " />
             <GithubSearchForm />
             {
-                props.isLoading && <LoadingSpiner/>
+                isLoading && <LoadingSpiner/>
             }
             {
-                props.repos.length > 0 && !props.isLoading && <GithubDataContainer/>
+                repos.length > 0 && !isLoading && <GithubDataContainer/>
             }
             {
-                props.error === true && !props.isLoading && <ErrorMessage/>
+                error === true && !isLoading && <ErrorMessage/>
             }
 
         </div>
