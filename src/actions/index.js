@@ -32,3 +32,10 @@ export const showError = ( error ) => {
         payload: error
     }
 };
+
+export const AddFactorialResult = ( result ) => {
+    return {
+        type: 'ADD_FACTORIAL_RESULT',
+        payload: result
+    }
+};
