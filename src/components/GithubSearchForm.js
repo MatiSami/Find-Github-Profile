@@ -15,7 +15,7 @@ function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {
     useEffect(() => {
         addReposList(reposList);
         isLoading(loadingStatus)
-    }, [reposList, loadingStatus]);
+    }, [reposList, loadingStatus, addReposList, isLoading]);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -28,12 +28,11 @@ function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {
                 'Accept': 'application/vnd.github.v3+json',
             }
         })
-            .then(response => response.json()) //Converting the response to a JSON object
+            .then(response => response.json())
             .then(data => {
-                // console.log(data)
                 setReposList(data)
                 setloadingStatus(false)
-                if (data.message === "Not Found") {
+                if ((data.message === "Not Found") || (data.length === 0)){
                    showError(true)  
                 }else {
                     showError(false)
