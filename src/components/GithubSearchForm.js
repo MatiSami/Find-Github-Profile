@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { addReposList as AddRepoListAction } from '../actions';
 import { isLoading as isLoadingAction } from './../actions';
@@ -10,17 +10,10 @@ import { device } from '../assets/styles/devices';
 
 function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {
     const [userName, setName] = useState("");
-    const [reposList, setReposList] = useState([])
-    const [loadingStatus, setloadingStatus] = useState(false)
-
-    useEffect(() => {
-        addReposList(reposList);
-        isLoading(loadingStatus)
-    }, [reposList, loadingStatus, addReposList, isLoading]);
 
     async function handleSubmit(event) {
         event.preventDefault();
-        setloadingStatus(true)
+        isLoading(true)
         addCommits([])
 
         fetch(`https://api.github.com/users/${userName}/repos`, {
@@ -31,8 +24,8 @@ function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {
         })
             .then(response => response.json())
             .then(data => {
-                setReposList(data)
-                setloadingStatus(false)
+                addReposList(data);
+                isLoading(false)
                 if ((data.message === "Not Found") || (data.length === 0)) {
                     showError(true)
                 } else {
@@ -40,14 +33,10 @@ function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {
                 }
             })
             .catch(error => {
-                console.error(error)
-
-                setReposList([]);
-                setloadingStatus(false)
+                addReposList([]);
+                isLoading(false)
             });
-
     }
-
 
     return (
         <Form onSubmit={handleSubmit}>

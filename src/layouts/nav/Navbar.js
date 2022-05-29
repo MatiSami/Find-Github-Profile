@@ -9,9 +9,9 @@ function  Navbar () {
   const [open, setOpen] = useState(false);
 
     return (
-      <NavBox>
+      <NavBox className='wrapper'>
         <Logo />
-        <Navigation className="wrapper" />
+        <Navigation />
         <BurgerMenu  open={open} setOpen={setOpen}/>
         <MobileMenu  open={open} setOpen={setOpen}/>
       </NavBox>

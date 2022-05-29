@@ -1,15 +1,13 @@
 import React from 'react';
 import SectionTitle from '../components/SectionTitle';
-import Navbar from '../layouts/nav/Navbar';
 import SectionDescription from './../components/SectionDescription';
 import styled from 'styled-components';
 
 function Instructions(props) {
     return (
-        <div className='wrapper'>
-            <Navbar />
+        <div className='wrapper content'>
             <SectionTitle title="Opis ninejszego zadania" />
-            <SectionDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id." />
+            <SectionDescription description="Autor: Mateusz Samuła" />
 
         <ApplicationRequirements>
             <h3>Założenia aplikacji</h3>
