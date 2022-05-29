@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-class NavigationItem extends Component {
-    render() {
+function NavigationItem(props) {
 
-        const StyledLink = styled(NavLink)`
-            padding: 0 1rem;
-            text-transform: uppercase;
-            letter-spacing: .15rem;
-            transition: all .75s;
-            display: flex;
-            color: #000;
-            justify-content: flex-end;
-            &.active {
-                font-weight: bold;
-                /* letter-spacing: .25rem; */
-            }
-            :hover {
-                font-weight: bold;
-                /* letter-spacing: .25rem; */
-            }
-        `
-
-        return (
-            <StyledLink to={ this.props.path } >{this.props.text}</StyledLink>
-        );
-    }
+    return (
+        <StyledLink to={props.path} >{props.text}</StyledLink>
+    );
 }
+
+const StyledLink = styled(NavLink)`
+    padding: 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    transition: all .75s;
+    font-size: 16px;
+    display: flex;
+    color: var(--white);
+    text-decoration: none;
+    justify-content: flex-end;
+    margin-left: 25px;
+    &.active {
+        font-weight: bold;
+        color: var(--primary)
+    }
+    :hover {
+        font-weight: bold;
+    }
+`
 
 export default NavigationItem;

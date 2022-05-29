@@ -1,5 +1,4 @@
 import React from 'react';
-// import CommitItemList from './CommitListItem';
 import styled from 'styled-components';
 
 
@@ -16,7 +15,7 @@ function CommitItemList({ message, author, date }) {
 
 const CommitsListElement = styled.div`
     font-size: 18px;
-    padding: 5px 40px;
+    padding: 5px 15px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;

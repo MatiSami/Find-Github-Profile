@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 
 function FactorialResult ({ factorialResults }) {
 
-    // console.log(factorialResults)
-    const lastResults = factorialResults.map((result, index) => {return <li key={index}>Wynik silni dla {result.number}: {result.result}</li>});
+    const lastResults = factorialResults.map((result, index) => {return <li key={index}>Wynik dla {result.number}: {result.result}</li>});
 
     return (
         <FactorialResultList>
@@ -16,6 +15,23 @@ function FactorialResult ({ factorialResults }) {
 
 const FactorialResultList = styled.ul`
     list-style: none;
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    li {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 10px;
+
+        &:last-of-type {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+    }
+
 `
 
 const mapStateToProps = state => {

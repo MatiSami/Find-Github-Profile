@@ -12,7 +12,7 @@ function Repos( { repos, isLoading, error }) {
     return (
         <div className='wrapper'>
             <Navbar />
-            <SectionTitle title="Znajdź Repozytorum na Githubie" />
+            <SectionTitle title="Znajdź Repozytorium na Githubie" />
             <SectionDescription description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dolor sem, fringilla vitae suscipit vitae, finibus vitae libero. Fusce ut ipsum vel lacus finibus tristique. Nam non leo consectetur, hendrerit magna in, luctus ante. Nullam sagittis porttitor vulputate. Nullam consectetur risus sem, ac placerat metus commodo eget. Morbi in purus. " />
             <GithubSearchForm />
             {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import styled from 'styled-components';
+import { device } from '../assets/styles/devices';
 
 function GithubUserDetails({ repos }) {
     return (
@@ -10,7 +11,6 @@ function GithubUserDetails({ repos }) {
                 <p>{repos[0].owner.login}</p>
             </div>
             <div>
-                <p>Świetnie!</p>
                 <p>Udało znaleść się użytkownika {repos[0].owner.login}. Możesz podejrzeć kilka ostatnich projektów. Po więcej szczegółw udaj się na profil użytkownika {repos[0].owner.login}</p>
                 <a href={repos[0].owner.html_url}>Skocz do github</a>
             </div>
@@ -19,11 +19,17 @@ function GithubUserDetails({ repos }) {
 }
 
 const GithubUserDetailsBox = styled.div`
-    max-width: 70%;
+    padding: 0 15px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
+
+    @media ${device.laptop} {
+        flex-direction: row;
+        max-width: 70%;
+    }
 
     img {
         max-width: 100px;
@@ -48,25 +54,34 @@ const GithubUserDetailsBox = styled.div`
     }
 
     div:last-of-type {
+        margin-top: 20px;
         text-align: center;
         line-height: 25px;
 
-        p:first-of-type {
-            font-size: 25px;
-            font-weight: bold;
+        @media ${device.laptop} {
+            text-align: left;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-left: 40px;
+            margin-top: 0;
         }
 
+        p {
+            @media ${device.laptop} {
+                width: 80%;
+            }
+        }
         a {
             display: block;
-            background-color: var(--black);
-            color: var(--white);
-            padding: 10px 20px;
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 20px;
             font-size: 14px;
             text-transform: uppercase;
             text-decoration: none;
             margin-top: 20px;
-            font-weight: bold;
-
+            letter-spacing: 3px;
         }
     }
 `

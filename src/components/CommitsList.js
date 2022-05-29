@@ -2,14 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CommitItemList from './CommitListItem';
 import styled from 'styled-components';
+import { device } from '../assets/styles/devices';
 
-function CommitList({commits}) {
+function CommitList({commits, activeRepo}) {
 
     const singleCommitListElement = commits.slice(0, 5).map((commit) => <CommitItemList key={commit.sha} message={commit.commit.message} author={commit.commit.author.name} date={commit.commit.author.date} />);
     
     return (
         <CommitListBox>
-            <h2> Ostatnie commity</h2>
+            <h2> Ostatnie commity repozytorium <br/><span>{activeRepo}</span></h2>
             {singleCommitListElement}
         </CommitListBox>
     );
@@ -18,8 +19,14 @@ function CommitList({commits}) {
 const CommitListBox = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
-    width: 50%;
+    margin-top: 20px;
+    padding: 0 15px;
+    width: 100%;
+
+    @media ${device.laptop} {
+        width: 60%;
+        margin-top: 0;
+    }
 
     h2 {
         text-align: center;
@@ -28,8 +35,8 @@ const CommitListBox = styled.div`
 `
 
 const mapStateToProps =  state  => {
-    const { commits } = state
-    return { commits }
+    const { commits, activeRepo } = state
+    return { commits, activeRepo }
 }
 
 export default connect(mapStateToProps)(CommitList);
