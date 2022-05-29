@@ -1,6 +1,5 @@
 
 import { Outlet } from 'react-router-dom';
-import Navbar from './layouts/nav/Navbar';
 import styled from 'styled-components';
 import Button from './components/Button';
 import { device } from './assets/styles/devices';
@@ -8,8 +7,7 @@ import { device } from './assets/styles/devices';
 function App() {
 
   return (
-    <div className='wrapper'>
-      <Navbar />
+    <div className='wrapper content'>
        <MainPageText>
         <p>Cześć!</p>
         <p>Zapraszam</p>
@@ -25,7 +23,6 @@ const MainPageText = styled.div`
   width: 100%;
   margin-top: 100px;
   padding: 0 15px;
-
   p {
     text-align: center;
   }

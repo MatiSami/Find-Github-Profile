@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-position: center;
         background-blend-mode: multiply;
-        min-height: 100vh;
+        /* min-height: calc(80vh) ; */
     }
     input {
         padding: 10px 10px 10px 20px;
@@ -82,6 +82,10 @@ const GlobalStyle = createGlobalStyle`
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
+    }
+
+    .content {
+        min-height: calc(100vh - 115px);
     }
 `;
 

@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-function MobileNavigationItem(props) {
+function MobileNavigationItem({ setOpen, path, text, open }) {
     return (
-        <MobileLink to={props.path} >{props.text}</MobileLink>
+        <MobileLink to={path}  onClick={() => setOpen(!open)}>{text}</MobileLink>
     );
 }
 
@@ -13,7 +13,7 @@ const MobileLink = styled(NavLink)`
     text-decoration: none;
     text-transform: uppercase;
     color: var(--black);
-    font-size: 30px;
+    font-size: 25px;
 
     &.active {
         font-weight: bold;
