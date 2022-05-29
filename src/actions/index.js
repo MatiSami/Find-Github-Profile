@@ -39,3 +39,10 @@ export const AddFactorialResult = ( result ) => {
         payload: result
     }
 };
+
+export const addActiveRepo = ( repoName ) => {
+    return {
+        type: 'ADD_ACTIVE_REPO',
+        payload: repoName
+    }
+};

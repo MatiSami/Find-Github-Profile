@@ -60,7 +60,8 @@ function Instructions(props) {
 }
 
 const ApplicationRequirements = styled.div`
-margin-top: 20px;
+    margin-top: 20px;
+    padding: 0 15px;
 
     ul {
         padding-left: 20px;

@@ -4,6 +4,7 @@ import CommitsList from './CommitsList';
 import ReposList from './ReposList';
 import styled from 'styled-components';
 import GithubUserDetails from './GithubUserDetails';
+import { device } from './../assets/styles/devices';
 
 function GithubDataContainer({ repos, commits }) {
 
@@ -24,7 +25,15 @@ function GithubDataContainer({ repos, commits }) {
 
 const GithubDataRenderBox = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    @media ${device.laptop} {
+        flex-direction: row;
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
 `
 
 const mapStateToProps = state => {

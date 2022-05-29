@@ -6,6 +6,7 @@ const initialvalue = {
     },
     error: false,
     factorialResults: [],
+    activeRepo: ''
 }
 
 const rootReducer = (state = initialvalue, action) => {
@@ -32,13 +33,17 @@ const rootReducer = (state = initialvalue, action) => {
             return {
                 ...state,
                 error: action.payload,
-
             };
         case ('ADD_FACTORIAL_RESULT'):
             return {
                 ...state,
                factorialResults: [...state.factorialResults, action.payload],
             };
+            case ('ADD_ACTIVE_REPO'):
+                return {
+                    ...state,
+                    activeRepo: action.payload,
+                };
         default:
             return state
     }
