@@ -16,8 +16,7 @@ function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {
         isLoading(true)
         addCommits([])
 
-        fetch(`https://api.github.com/users/${userName}/repos`, {
-            sort: 'updated',
+        fetch(`https://api.github.com/users/${userName}/repos?sort=pushed`, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
             }
