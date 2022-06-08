@@ -1,8 +1,8 @@
 import React from "react";
-import NavigationItem from "./NavigationItem";
 import styled from 'styled-components';
-import { device } from "../assets/styles/devices";
+import { device } from "../../assets/styles/devices";
 import uuid from 'react-uuid'
+import NavigationItem from './NavigationItem';
 
 function  Navigation () {
     

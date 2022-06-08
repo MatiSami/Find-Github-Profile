@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { addCommits as addCommitsAction} from '../actions';
+import { addCommits as addCommitsAction} from '../../actions';
 import styled from 'styled-components';
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { addActiveRepo as addActiveRepoAction } from './../actions/index';
+import { addActiveRepo as addActiveRepoAction } from '../../actions/index';
 
 function ReposItemList({addCommits, addActiveRepo, name, user}) {
 

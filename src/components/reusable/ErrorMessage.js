@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function ErrorMessage(props) {
     return (
         <ErrorMessageBox>
-           <p>Niestety nie znaleziono żadnych wyników. Spróbuj ponownie </p> 
+           <p>{props.message}</p> 
         </ErrorMessageBox>
     );
 }

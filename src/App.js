@@ -1,7 +1,7 @@
 
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import Button from './components/Button';
+import Button from './components/reusable/Button';
 import { device } from './assets/styles/devices';
 
 function App() {

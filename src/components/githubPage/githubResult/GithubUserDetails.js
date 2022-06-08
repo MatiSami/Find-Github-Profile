@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import styled from 'styled-components';
-import { device } from '../assets/styles/devices';
+import { device } from '../../../assets/styles/devices';
 
 function GithubUserDetails({ repos }) {
     return (

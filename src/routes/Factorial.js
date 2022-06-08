@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionTitle from '../components/SectionTitle';
-import SectionDescription from './../components/SectionDescription';
-import FactorialResults from '../components/FactorialResults';
-import FactorialForm from '../components/FactorialForm';
+import SectionTitle from '../components/reusable/SectionTitle';
+import SectionDescription from '../components/reusable/SectionDescription';
+import FactorialResults from '../components/factorialPage/FactorialResults';
+import FactorialForm from '../components/factorialPage/FactorialForm';
 
 function Factorial() {
 

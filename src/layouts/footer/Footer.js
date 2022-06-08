@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterIcons from '../../components/FooterIcons';
+import FooterIcons from '../../components/footer/FooterIcons';
 import styled from 'styled-components';
 
 function Footer(props) {

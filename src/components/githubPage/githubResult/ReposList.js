@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ReposItemList from './ReposItemList';
+import ReposItemList from '../ReposItemList';
 import styled from 'styled-components';
-import { device } from '../assets/styles/devices';
+import { device } from '../../../assets/styles/devices';
 
 function ReposList({repos}) {
 
