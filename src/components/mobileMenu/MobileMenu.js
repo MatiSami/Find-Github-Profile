@@ -11,8 +11,6 @@ function MobileMenu({ open, setOpen }) {
         {name: 'Factorial', path: '/factorial', text: 'Silnia'},
       ]
 
-      console.log(open)
-
       const singleMobileNavigationLink = navigationLinks.map((link) => <MobileNavigationItem key={uuid()} path={link.path} text={link.text} setOpen={setOpen}  open={open}/>);
     return (
         <MobileMenuContent open={open}>

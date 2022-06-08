@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { addReposList as AddRepoListAction } from '../actions';
-import { isLoading as isLoadingAction } from './../actions';
-import { addCommits as addCommitsAction } from '../actions';
+import { addReposList as AddRepoListAction } from '../../actions';
+import { isLoading as isLoadingAction } from '../../actions';
+import { addCommits as addCommitsAction } from '../../actions';
 import styled from 'styled-components';
-import { showError as showErrorAction } from './../actions';
-import { device } from '../assets/styles/devices';
+import { showError as showErrorAction } from '../../actions';
+import { device } from '../../assets/styles/devices';
 
 
 function GithubSearchForm({ addReposList, isLoading, addCommits, showError }) {

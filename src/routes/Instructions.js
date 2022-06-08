@@ -1,6 +1,6 @@
 import React from 'react';
-import SectionTitle from '../components/SectionTitle';
-import SectionDescription from './../components/SectionDescription';
+import SectionTitle from '../components/reusable/SectionTitle';
+import SectionDescription from '../components/reusable/SectionDescription';
 import styled from 'styled-components';
 
 function Instructions(props) {

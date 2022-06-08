@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import CommitsList from './CommitsList';
-import ReposList from './ReposList';
+import CommitsList from './githubResult/CommitsList';
+import ReposList from './githubResult/ReposList';
 import styled from 'styled-components';
-import GithubUserDetails from './GithubUserDetails';
-import { device } from './../assets/styles/devices';
+import GithubUserDetails from './githubResult/GithubUserDetails';
+import { device } from '../../assets/styles/devices';
 
 function GithubDataContainer({ repos, commits }) {
 

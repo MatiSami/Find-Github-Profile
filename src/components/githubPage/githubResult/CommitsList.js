@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CommitItemList from './CommitListItem';
 import styled from 'styled-components';
-import { device } from '../assets/styles/devices';
+import { device } from '../../../assets/styles/devices';
 
 function CommitList({commits, activeRepo}) {
 

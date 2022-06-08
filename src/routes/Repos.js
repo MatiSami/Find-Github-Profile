@@ -1,11 +1,11 @@
 import React from 'react';
-import SectionDescription from '../components/SectionDescription';
-import SectionTitle from '../components/SectionTitle';
-import GithubSearchForm from './../components/GithubSearchForm';
+import SectionDescription from '../components/reusable/SectionDescription';
+import SectionTitle from '../components/reusable/SectionTitle';
+import GithubSearchForm from '../components/githubPage/GithubSearchForm';
 import { connect } from 'react-redux';
-import GithubDataContainer from '../components/GithubDataContainer';
-import ErrorMessage from '../components/ErrorMessage';
-import LoadingSpiner from '../components/LoadingSpiner';
+import GithubDataContainer from '../components/githubPage/GithubDataContainer';
+import ErrorMessage from '../components/reusable/ErrorMessage';
+import LoadingSpiner from '../components/reusable/LoadingSpiner';
 
 function Repos( { repos, isLoading, error }) {
     return (
@@ -20,7 +20,7 @@ function Repos( { repos, isLoading, error }) {
                 repos.length > 0 && !isLoading && <GithubDataContainer/>
             }
             {
-                error === true && !isLoading && <ErrorMessage/>
+                error === true && !isLoading && <ErrorMessage message="Niestety nie znaleziono żadnych wyników. Spróbuj ponownie"/>
             }
 
         </div>

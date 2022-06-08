@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { device } from '../assets/styles/devices';
-// import { bool, func } from 'prop-types';
+import { device } from '../../assets/styles/devices';
 
 function BurgerMenu ({ open, setOpen }) {
     return (

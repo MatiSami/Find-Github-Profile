@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import { connect } from 'react-redux';
-import { AddFactorialResult as AddFactorialResultAction} from '../actions';
+import { AddFactorialResult as AddFactorialResultAction} from '../../actions';
 import styled from 'styled-components'
-import { device } from './../assets/styles/devices';
+import { device } from '../../assets/styles/devices';
 
 function FactorialForm({ AddFactorialResult }) {
     const [number, setNumber] = useState('');

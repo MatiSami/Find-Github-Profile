@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { device } from '../assets/styles/devices';
+import { device } from '../../assets/styles/devices';
 
 function Button() {
     return (

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Navigation from './../../components/Navigations';
-import Logo from './../../components/Logo';
+import Navigation from '../../components/navigation/Navigations';
+import Logo from '../../components/reusable/Logo';
 import styled from 'styled-components';
-import BurgerMenu from '../../components/BurgerMenu';
-import MobileMenu from '../../components/MobileMenu';
+import MobileMenu from '../../components/mobileMenu/MobileMenu';
+import BurgerMenu from '../../components/mobileMenu/BurgerMenu';
 
 function  Navbar () {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,7 @@ function  Navbar () {
       <NavBox className='wrapper'>
         <Logo />
         <Navigation />
-        <BurgerMenu  open={open} setOpen={setOpen}/>
+        <BurgerMenu open={open} setOpen={setOpen}/>
         <MobileMenu  open={open} setOpen={setOpen}/>
       </NavBox>
     );
